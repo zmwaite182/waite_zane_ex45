@@ -20,7 +20,23 @@ class Scene(object):
 
 class OpeningScene(Scene):
     def enter(self):
-        pass
+        print("A long time ago in a galaxy far far away...", end='')
+        input()
+        print("Our hero finds himself in a predicament.", end='')
+        input()
+        print("After being knocked unconscious and forced into", end='')
+        input()
+        print("slave labor for several years, he has finally", end='')
+        input()
+        print("gained a new way to try and escape his captors.", end='')
+        input()
+        print("A colosseum arena fight is your method of escape.", end='')
+        input()
+        print("It won't be easy, but our hero must emerge victorious", end='')
+        input()
+        print("in order to find who he is and where he is from...", end='')
+        input()
+        return 'weapon_room'
 
 class WeaponRoom(Scene):
 
@@ -28,7 +44,7 @@ class WeaponRoom(Scene):
         print(dedent("""
         Today is the day. The day that you've been waiting for ever since you got stuck in that lousy cell.
         You don't remember who you are, and you barely remember why you're here, but here you are.
-        Some might call battling for other's amusements in an audacious Utapaun Collosseum a horror, but you see it as an opportunity.
+        Some might call battling for other's amusements in an audacious Utapaun Colosseum a horror, but you see it as an opportunity.
         An opportunity to leave this god-forsaken planet.
         """))
         input()
@@ -86,3 +102,23 @@ class ArenaMaster(Scene):
 
     def enter(self):
         pass
+
+class SceneMap(object):
+
+    scenes = {'opening_scene': OpeningScene(),
+        'weapon_room': WeaponRoom(),
+        'arena_intro': ArenaIntro(),
+        'first_monster': FirstMonster(),
+        'second_monster': SecondMonster(),
+        'arena_master': ArenaMaster()
+        }
+
+        def __init__(self, start):
+            self.start = start
+
+        def next_scene(self, next):
+            scene = SceneMap.scenes.get(next)
+            scene.enter()
+
+        def start_scenes(self):
+            return self.next_scene(self.start)
