@@ -1,13 +1,19 @@
 # CLASSES
 
+<<<<<<< HEAD
 from textwrap import dedent
 
+=======
+>>>>>>> classes-branch
 # Player has-a Force
 class Player(object):
 
     def __init__(self):
         self.force = Force()
+<<<<<<< HEAD
         # self.weapon eventually too
+=======
+>>>>>>> classes-branch
 
 class Force(object):
 
@@ -15,16 +21,21 @@ class Force(object):
         self.level = level
 
 class Scene(object):
+<<<<<<< HEAD
     print("This scene is incomplete")
     exit(1)
 
 class OpeningScene(Scene):
     def enter(self):
         pass
+=======
+    pass
+>>>>>>> classes-branch
 
 class WeaponRoom(Scene):
 
     def enter(self):
+<<<<<<< HEAD
         print(dedent("""
         Today is the day. The day that you've been waiting for ever since you got stuck in that lousy cell.
         You don't remember who you are, and you barely remember why you're here, but here you are.
@@ -66,6 +77,9 @@ class WeaponRoom(Scene):
             Before you are able to choose, The arena warden shoves you along towards the gates to the arena before the metal bars rise and you are thrown into the arena.
             """))
             return 'arena_intro'
+=======
+        pass
+>>>>>>> classes-branch
 
 class ArenaIntro(Scene):
 
