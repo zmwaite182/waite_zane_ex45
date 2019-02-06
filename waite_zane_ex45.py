@@ -5,5 +5,5 @@
 from classes import *
 
 user = Player(0)
-blah = SceneMap(user)
-blah.next_scene('opening_scene')
+map = SceneMap(user)
+map.next_scene('opening_scene')
